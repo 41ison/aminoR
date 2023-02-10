@@ -4,7 +4,7 @@ library(ggrepel)
 library(kableExtra)
 aminoacids <- read_tsv("./aminoacidsTab.tsv")
 
-# tabela resumindo as características dos aminoácidos
+# Tabela resumindo as características dos aminoácidos
 # summary of aminoacids table
 aminoacids %>% 
     select(Abbr, Name, Hydropathy, pKa, pKb, pKx, Monoisotopic_Mass) %>%
@@ -13,8 +13,8 @@ aminoacids %>%
       align = "c") %>% 
   kable_classic(full_width = F, html_font = "Cambria")
 
-#
-
+# pKa dos diferentes aminoácidos para cada região (COOH, NH2 e cadeia lateral)
+# pKa of different amino acids for each group (COOH, NH2 and R-group)
 pKa <- ggplot(aminoacids, aes(x = Abbr)) +
      geom_line(aes(y = pKa, group = 1), color = "#0073C2FF") +
         annotate("text", x = 16, y = 2.7, label = "-COOH",
