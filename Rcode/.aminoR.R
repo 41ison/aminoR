@@ -3,12 +3,13 @@ library(tidyverse)
 library(ggrepel)
 library(kableExtra)
 library(seqinr)
-aminoacids <- read_tsv("./aminoacidsTab.tsv")
+aminoacids <- read_tsv("./AAdata.tsv")
 
 # Tabela resumindo as características dos aminoácidos
 # summary of aminoacids table
 aminoacids %>% 
-    select(Abbr, Name, Hydropathy, pKa, pKb, pKx, Monoisotopic_Mass) %>%
+    select(Name,Abbr,AA, Hydropathy, pKa, pKb, pKx,
+            Monoisotopic_Mass, frequency_in_proteins) %>%
     arrange(Hydropathy) %>%
     kbl(caption = "Summary of amino acids properties)",
       align = "c") %>% 
