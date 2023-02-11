@@ -238,9 +238,6 @@ monoiso_plot <- function(x) {
     theme(axis.text.x = element_text(angle = 90,
                     vjust = 0.5, hjust = 1), legend.position = "bottom") +
                     facet_wrap(~ Hydropathy, ncol = 3, scales = "free_x")
-
-ggsave("Monoisotopic_Mass.png", monoiso, width = 9, height = 8, dpi = 300,
-    path = "/Volumes/Expansion/proteomics_basics/")
 }
 
 # using the function for plot monoisotopic masses and hydropathy
