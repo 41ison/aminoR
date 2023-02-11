@@ -12,8 +12,8 @@ aminoacids %>%
             Monoisotopic_Mass, frequency_in_proteins) %>%
     arrange(Hydropathy) %>%
     kbl(caption = "Summary of amino acids properties)",
-      align = "c") %>% 
-  kable_classic(full_width = F, html_font = "Cambria")
+        align = "c") %>% 
+    kable_classic(full_width = F, html_font = "Cambria")
 
 # Functions to calculate the pKa of a peptide, given the one letter code for each amino acid
 pKa <- function(x) {
