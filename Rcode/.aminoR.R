@@ -8,7 +8,7 @@ aminoacids <- read_tsv("./AAdata.tsv")
 # Tabela resumindo as características dos aminoácidos
 # summary of aminoacids table
 aminoacids %>% 
-    select(Name,Abbr,AA, Hydropathy, pKa, pKb, pKx,
+    select(Name,Abbr,AA, Hydropathy, pKa, pKb, pKx, pl,
             Monoisotopic_Mass, frequency_in_proteins) %>%
     arrange(Hydropathy) %>%
     kbl(caption = "Summary of amino acids properties)",
