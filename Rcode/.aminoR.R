@@ -15,7 +15,7 @@ aminoacids %>%
   kable_classic(full_width = F, html_font = "Cambria")
 
 # Functions to calculate the pKa of a peptide, given the one letter code for each amino acid
-pKa <- pKa <- function(x) {
+pKa <- function(x) {
     if (x == "A" || x =="G") {
         return(2.34)
     } else if (x == "V") {
