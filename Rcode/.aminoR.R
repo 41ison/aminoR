@@ -14,58 +14,102 @@ aminoacids %>%
       align = "c") %>% 
   kable_classic(full_width = F, html_font = "Cambria")
 
-# Functions to calculate the pKa of a peptide, given the one letter code for each aminoacid
-pKa <- function(x) {
-    if (x == "A" || x == "G" || x == "V" || x == "L" || x == "I" ||
-        x == "P" || x == "F" || x == "Y" || x == "W") {
-        return(2.35)
-    } else if (x == "C" || x == "M") {
-        return(1.92)
-    } else if (x == "S" || x == "T") {
-        return(2.19)
-    } else if (x == "N" || x == "Q") {
-        return(2.17)
-    } else if (x == "D" || x == "E") {
+# Functions to calculate the pKa of a peptide, given the one letter code for each amino acid
+pKa <- pKa <- function(x) {
+    if (x == "A" || x =="G") {
+        return(2.34)
+    } else if (x == "V") {
+        return(2.32)
+    } else if (x == "L" || x == "I") {
+        return(2.36)
+    } else if (x == "P") {
         return(1.99)
-    } else if (x == "K" || x == "R") {
+    } else if (x == "F") {
+        return(1.83)
+    } else if (x == "Y") {
+        return(2.20)
+    } else if (x == "W") {
+        return(2.83)
+    } else if (x == "C") {
+        return(1.96)
+    } else if (x == "M") {
+        return(2.28)
+    } else if (x == "S") {
+        return(2.21)
+    } else if (x == "T") {
+        return(2.09)
+    } else if (x == "N") {
+        return(2.02)
+    } else if (x == "Q") {
+        return(2.17)
+    } else if (x == "D") {
+        return(1.88)
+    } else if (x == "E") {
+        return(2.19)
+    } else if (x == "K") {
         return(2.18)
+    } else if (x == "R") {
+        return(2.17)
     } else if (x == "H") {
         return(1.82)
     }
 }
 
 pKb <- function(x) {
-    if (x == "A" || x == "G" || x == "V" || x == "L" || x == "I" ||
-        x == "P" || x == "F" || x == "Y" || x == "W") {
+    if (x == "A") {
         return(9.69)
-    } else if (x == "C" || x == "M") {
-        return(1.92)
-    } else if (x == "S" || x == "T") {
+    } else if (x == "G" || x == "L" ||
+               x == "I" || x == "D") {
+        return(9.60)
+    } else if (x == "C") {
+        return(10.28)
+    } else if (x == "M") {
+        return(9.21)
+    } else if (x == "S") {
+        return(9.15)
+    } else if (x == "T") {
+        return(9.10)
+    } else if (x == "N") {
+        return(8.80)
+    } else if (x == "Q" || x == "F") {
         return(9.13)
-    } else if (x == "N" || x == "Q") {
-        return(8.72)
-    } else if (x == "D" || x == "E") {
+    } else if (x == "E") {
         return(9.67)
-    } else if (x == "K" || x == "R") {
-        return(10.53)
+    } else if (x == "K") {
+        return(8.95)
+    } else if (x == "R") {
+        return(9.04)
     } else if (x == "H") {
-        return(6.00)
+        return(9.17)
+    } else if (x == "V") {
+        return(9.62)
+    } else if (x == "P") {
+        return(10.60)
+    } else if (x == "Y") {
+        return(9.11)
+    } else if (x == "W") {
+        return(9.39)
     }
 }
 
 pKx <- function(x) {
-    if (x == "A" || x == "G" || x == "V" || x == "L" || x == "I" ||
-        x == "P" || x == "F" || x == "Y" || x == "W") {
-        return(0)
-    } else if (x == "C" || x == "M") {
-        return(1.92)
-    } else if (x == "S" || x == "T") {
-        return(0)
-    } else if (x == "N" || x == "Q") {
-        return(0)
-    } else if (x == "D" || x == "E") {
+    if (x == "A" || x == "G" || x == "V" ||
+        x == "L" || x == "I" || x == "P" ||
+        x == "F" || x == "W" || x == "N" ||
+        x == "Q" || x == "S" || x == "T" ||
+        x == "M") {
+        return(NA)
+    } else if (x == "C") {
+        return(8.18)
+    } else if (x == "Y") {
+        return(10.07)
+    } else if (x == "D") {
+        return(3.65)
+    } else if (x == "E") {
         return(4.25)
-    } else if (x == "K" || x == "R") {
+    } else if (x == "K") {
+        return(10.53)
+    } else if (x == "R") {
         return(12.48)
     } else if (x == "H") {
         return(6.00)
