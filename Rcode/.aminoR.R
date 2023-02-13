@@ -11,7 +11,7 @@ aminoacids %>%
     select(Name,Abbr,AA, Hydropathy, pKa, pKb, pKx, pl,
             Monoisotopic_Mass, frequency_in_proteins) %>%
     arrange(Hydropathy) %>%
-    kbl(caption = "Summary of amino acids properties)",
+    kbl(caption = "Summary of amino acids properties",
         align = "c") %>% 
     kable_classic(full_width = F, html_font = "Cambria")
 
