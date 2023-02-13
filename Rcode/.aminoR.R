@@ -222,7 +222,7 @@ monoiso_plot <- function(x) {
                     size = Monoisotopic_Mass, color = Hydropathy)) +
             scale_color_manual(values = c("#0073C2FF", "#CD534CFF", "#8F7700FF")) +
     geom_point(alpha = 0.5) +
-    guides(colour = "legend", size = FALSE) +
+    guides(colour = guide_legend(override.aes = list(size=6)), size = FALSE) +
     geom_segment(aes(x = Abbr, xend = Abbr,
                      y = 50, yend = Monoisotopic_Mass),
                      linewidth = 0.2, linetype = "dashed",
