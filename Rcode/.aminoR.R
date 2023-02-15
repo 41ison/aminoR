@@ -12,8 +12,11 @@ aminoacids %>%
             Monoisotopic_Mass, frequency_in_proteins) %>%
     arrange(Hydropathy) %>%
      rename("Aminoacid" = Name,
+            "pKa (COOH)" = pKa,
+            "pKb (NH2)" = pKb,
+            "pKx (side chain)" = pKx,
             "Monoisotopic Mass" = Monoisotopic_Mass,
-            "Frequency in proteins" = frequency_in_proteins) %>%
+            "Frequency in proteins (%)" = frequency_in_proteins) %>%
     kbl(caption = "Summary of amino acids properties",
       align = "c") %>% 
   kable_classic(full_width = F, html_font = "Cambria")
@@ -195,8 +198,16 @@ monoisotopic_pepetide <- function(x) {
 }
 
 # how to use the monoisotopic_pepetide function
-peptideTest <- c("M","A","L","S","T","A","R","T","E","R")
-monoisotopic_pepetide(peptideTest)
+# Natriuretic peptides B (P16860) sequence for testing
+AA <- c("M","D","P","Q","T","A","P","S","R","A","L","L",
+"L","L","L","F","L","H","L","A","F","L","G","G","R","S","H",
+"P","L","G","S","P","G","S","A","S","D","L","E","T","S","G","L","Q","E","Q",
+"R","N","H","L","Q","G","K","L","S","E","L","Q","V","E","Q","T","S","L","E",
+"P","L","Q","E","S","P","R","P","T","G","V","W","K","S","R","E","V","A","T",
+"E","G","I","R","G","H","R","K","M","V","L","Y","T","L","R","A","P","R","S",
+"P","K","M","V","Q","G","S","G","C","F","G","R","K","M","D","R","I","S",
+"S","S","S","G","L","G","C","K","V","L","R","R","H")
+monoisotopic_pepetide(AA)
 
 # plot the pKa values for a given sequence of amino acids
 pKa_plot <- function(x) {
