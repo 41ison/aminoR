@@ -170,19 +170,44 @@ monoisotopic_mass <- function(x) {
 
 # function to calculate the isoelectric point for the amino acid, given the one letter code
 pI <- function(x) {
-    if (x == "A" || x == "G" || x == "V" || x == "L" || x == "I" ||
-        x == "P" || x == "F" || x == "Y" || x == "W") {
+    if (x == "A") {
         return(6.00)
-    } else if (x == "C" || x == "M") {
+    } else if (x == "G") {
+        return(5.97)
+    } else if (x == "V") {
+        return(5.96)
+    } else if (x == "L") {
+        return(5.98)
+    } else if (x == "I") {
+        return(6.02)
+    } else if (x == "P") {
+        return(6.30)
+    } else if (x == "F") {
+        return(5.48)
+    } else if (x == "Y") {
+        return(5.66)
+    } else if (x == "W") {
+        return(5.89)
+    } else if (x == "C") {
         return(5.07)
-    } else if (x == "S" || x == "T") {
+    } else if (x == "M") {
+        return(5.74)
+    } else if (x == "T") {
         return(5.60)
-    } else if (x == "N" || x == "Q") {
+    } else if (x == "N") {
         return(5.41)
-    } else if (x == "D" || x == "E") {
+    } else if (x == "D") {
         return(2.77)
-    } else if (x == "K" || x == "R") {
-        return(10.53)
+    } else if (x == "E") {
+        return(3.22)
+    } else if (x == "Q") {
+        return(5.65)
+    } else if (x == "S") {
+        return(5.68)
+    } else if (x == "R") {
+        return(10.76)
+    } else if (x == "K") {
+        return(9.74)
     } else if (x == "H") {
         return(7.59)
     }
